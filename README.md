@@ -16,7 +16,7 @@
 - Easier management since install, upgrade, and rollback processes are built into the Kubernetes platform. 
 
 #### Installation and Set Up
-- Download docker and create a Docker Hub Account
+- [Download docker](https://docs.docker.com/desktop/windows/install/) and create a [Docker Hub Account](https://hub.docker.com)
 - Enable the WSL 2 Settings 
 - Check hyper -v settings on windows machines
 
