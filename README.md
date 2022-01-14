@@ -53,3 +53,36 @@
 * `docker images` will list all images and we can see the image `rajsjohal/eng99_my_nginx` 
 * `docker push rajsjohal/eng99_my_nginx` pushes the image to my dockerhub and creates a new repo called rajsjohal/eng99_my_nginx
 * Tags are similar to commit messages, update tags when you push to docker
+
+#### Dockerfile
+* A simple Dockerfile which can run within the specified container, in this case we update and upgrade the nginx container and replace the contents of the html file with a header.
+```
+FROM nginx
+
+RUN apt update -y
+RUN apt upgrade -y
+
+WORKDIR /usr/share/nginx/html
+RUN echo "<h1>Docker Success!<h1>" > index.html
+
+
+EXPOSE 80
+```
+
+#### Docker Compose
+* Simple docker compose yaml file
+```
+services:
+  nginx_server:
+    image: nginx:latest
+    ports: 
+      - "10:10"
+  
+  nginx_server2:
+    image: nginx:latest
+    ports:
+      - "81:81"
+```
+* Run `docker compose build` then `docker compose up`
+* `docker compose down`
+

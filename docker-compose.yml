@@ -1,0 +1,35 @@
+services:
+  nginx_server:
+    container_name: nginx1
+    image: raj-nginx
+    build:
+      context: .
+      dockerfile: nginx1.dockerfile
+    ports: 
+      - "80:80"
+  
+  nginx_server2:
+    container_name: nginx2
+    image: nginx:latest
+    ports:
+      - "81:80"
+
+# services:
+#   app:
+#     container_name: nodeapp
+#     networks:
+#       - app-db-network
+    # links:
+    #   - db
+    # depends_on: 
+    #   - db
+
+#   db:
+#     container_name: mongodb
+#     networks:
+#       - app-db-network
+
+# networks:
+#   app-db-network:
+#     driver: bridge 
+# ENV DB_HOST=mongodb://mongodb:27017/posts in dockerfile 
