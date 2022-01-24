@@ -64,11 +64,12 @@
 * A simple Dockerfile which can run within the specified container, in this case we update and upgrade the nginx container and replace the contents of the html file with a header.
 - A docker file is always called `Dockerfile` without any extension
 - Some commands we can use in a Dockerfile are as follows:
-  - FROM - Selects the image you wish to refer to within the Dockerfile
-  - RUN - Executes a command line during the building of the image
-  - CMD - Runs within the container after the container has been built from a image
-  - WORKDIR - Specify the working directory within the container
-  - EXPOSE - Selects the port which the container should be running
+  - `FROM` - Selects the image you wish to refer to within the Dockerfile
+  - `RUN` - Executes a command line during the building of the image
+  - `CMD` - Runs within the container after the container has been built from a image
+  - `WORKDIR` - Specify the working directory within the container
+  - `EXPOSE` - Selects the port which the container should be running
+  - `COPY` - adds files from you Docker client's current directory 
   - Refer to this [Dockerfile Documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 - Below we have a basic Docker file, demonstrates the syntax and what commands can be run. This file simply replaces the contents of the nginx index.html file so we can see the heading 'Docker Success' whenever we run the container with this nginx index.html file. This Dockerfile runs within the container. 
