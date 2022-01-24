@@ -69,6 +69,7 @@
   - CMD - Runs within the container after the container has been built from a image
   - WORKDIR - Specify the working directory within the container
   - EXPOSE - Selects the port which the container should be running
+  - Refer to this [Dockerfile Documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 - Below we have a basic Docker file, demonstrates the syntax and what commands can be run. This file simply replaces the contents of the nginx index.html file so we can see the heading 'Docker Success' whenever we run the container with this nginx index.html file. This Dockerfile runs within the container. 
 ```
