@@ -5,6 +5,12 @@
 - Bundle application, its dependencies and its configurations into a single image which is running in isolated user environments on a traditional OS on a traditional server or in a virualiation environment. 
 - Virtualisation enables you to run multiple OS's on the hardware of a single physical server while containerisation enables you to deploy multiple applications using the same OS on a single virtual machine or server. 
 
+## Containers
+- A runnable instance of an image
+- Can be run on a local machines, virtual machines or deploying to the cloud
+- Portable (Can be run an any OS)
+- Containers are isolated from each other and run their own software, binaries and configurations 
+
 ## Benefits
 - Portability between different platforms and clouds. Write once and run anywhere
 - Efficiency through using far fewer resources than VM's and delivering higher utilization of compute resources. 
@@ -56,6 +62,15 @@
 
 #### Dockerfile
 * A simple Dockerfile which can run within the specified container, in this case we update and upgrade the nginx container and replace the contents of the html file with a header.
+- A docker file is always called `Dockerfile` without any extension
+- Some commands we can use in a Dockerfile are as follows:
+  - FROM - Selects the image you wish to refer to within the Dockerfile
+  - RUN - Executes a command line during the building of the image
+  - CMD - Runs within the container after the container has been built from a image
+  - WORKDIR - Specify the working directory within the container
+  - EXPOSE - Selects the port which the container should be running
+
+- Below we have a basic Docker file, demonstrates the syntax and what commands can be run. This file simply replaces the contents of the nginx index.html file so we can see the heading 'Docker Success' whenever we run the container with this nginx index.html file. This Dockerfile runs within the container. 
 ```
 FROM nginx
 
@@ -68,6 +83,9 @@ RUN echo "<h1>Docker Success!<h1>" > index.html
 
 EXPOSE 80
 ```
+- A Dockerfile can be used to build a Docker Image
+- `docker build` to build the Dockerfile
+- The image you have just created can then be run
 
 #### Docker Compose
 * Simple docker compose yaml file
