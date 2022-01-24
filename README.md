@@ -90,7 +90,12 @@ EXPOSE 80
 - The image you have just created can then be run
 
 #### Docker Compose
-* Simple docker compose yaml file
+- Compose is a tool for defining and running multi-container Docker apps. With compose, you use a YAML file to configure the apps services. You can then create and start all the services from your configuration. 
+- Compose works in 3 steps:
+  - Define your app's environment with a `Dockerfile` so it can be reproduced anywhere
+  - Define the services that make up your app in `docker-compose.yml`
+  - Run `docker compose up` 
+* Simple `docker-compose.yml` file
 ```
 services:
   nginx_server:
